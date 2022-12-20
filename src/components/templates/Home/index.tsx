@@ -1,5 +1,8 @@
+import DiagrammLine from "../../organisms/DiagrammLine"
 import React, { FC } from "react"
 import styles from './style.module.scss'
+import Form from "molecules/Form"
+import Box from '@mui/material/Box'
 
 type Page = {
   
@@ -7,11 +10,11 @@ type Page = {
 
 const HomeTemplate: FC<Page> = ({}) => {
   return (
-    <div className={styles.container}>
-      <div>
-        Главная
-      </div>
-    </div>
+    <Box className={styles.container}>
+        <Form />
+
+        <DiagrammLine />
+    </Box>
   )
 }
 

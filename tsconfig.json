@@ -36,8 +36,11 @@
       "pages/*": [
         "./pages/*"
       ],
+      "helpers": [
+        "src/hooks/helpers"
+      ],
       "hooks": [
-        "src/hooks/*"
+        "src/hooks/hooks"
       ],
       "services": [
         "src/services/index.ts"

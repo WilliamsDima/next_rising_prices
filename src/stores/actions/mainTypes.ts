@@ -1,6 +1,9 @@
+import { IProduct } from './../redusers/main/types';
 import { PayloadAction } from "@reduxjs/toolkit"
-import { IStore, User } from "../redusers/main/types"
+import { ICheck, IStore } from "../redusers/main/types"
 
 export type MainActions = {
-    setUsers: (state: IStore, payload: PayloadAction<User[]>) => void
+    setChecks: (state: IStore, payload: PayloadAction<ICheck[]>) => void
+    setProducts: (state: IStore, payload: PayloadAction<IProduct[]>) => void
+    setSearchProduct: (state: IStore, payload: PayloadAction<IProduct>) => void
 }

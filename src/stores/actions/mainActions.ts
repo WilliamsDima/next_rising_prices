@@ -1,7 +1,13 @@
 import { MainActions } from "./mainTypes"
 
 export const mainActions: MainActions = {
-    setUsers: (state, { payload }) => {
-        state.users = payload
+    setChecks: (state, { payload }) => {
+        state.checks = payload
+    },
+    setProducts: (state, { payload }) => {
+        state.products = payload
+    },
+    setSearchProduct: (state, { payload }) => {
+        state.selectProduct = payload
     },
 }
