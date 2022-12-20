@@ -12,7 +12,7 @@ import {
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import { useAppSelector } from '../../../hooks/hooks'
-import { clearDublicat, getMonth, getProductData, ProductData, randomRgba, sortOnDate } from 'helpers'
+import { getProductData, randomRgba } from 'helpers'
 
 ChartJS.register(
   CategoryScale,
@@ -43,7 +43,6 @@ export const options = {
 const DiagrammLine = () => {
 
   const { checks, products, selectProduct } = useAppSelector(store => store.main)
-  // const [mouths, setMounts] = useState(labels)
 
   // поиск всех товаров по выбранному названию
   const productsSearch = products?.filter((item) => {

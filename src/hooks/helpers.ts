@@ -67,39 +67,3 @@ export const getProductData = (products: IProduct[]): ProductData => {
 
     return data
 }
-
-export const getMonth = (startDate: Date, endDate: Date) => {
-    let labels = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-
-    let mouths = [...labels]
-
-    if (startDate.getFullYear() < endDate.getFullYear()) {
-
-        if (endDate.getFullYear() - startDate.getFullYear() > 1) {
-
-            let startMouths = mouths.slice(startDate?.getMonth())
-            let endMouths = mouths.slice(0, endDate.getMonth() + 1)
-            endMouths[0] = endMouths[0] + ` ${endDate.getFullYear()}`
-            startMouths[0] = startMouths[0] + ` ${startDate.getFullYear()}`
-
-            for (let i = 0; i < endDate.getFullYear() - startDate.getFullYear(); i++) {
-            const currentYear = startDate.getFullYear() + i
-        
-            let newYear = [...labels]
-            newYear[0] = newYear[0] + ` ${currentYear}`
-        
-            mouths = [...startMouths, ...newYear, ...endMouths]
-            }
-        } else {
-            let startMouths = mouths.slice(startDate?.getMonth())
-            let endMouths = mouths.slice(0, endDate.getMonth() + 1)
-            endMouths[0] = endMouths[0] + ` ${endDate.getFullYear()}`
-            startMouths[0] = startMouths[0] + ` ${startDate.getFullYear()}`
-            mouths = [...startMouths, ...endMouths]
-        }
-    } else {
-        mouths = labels.slice(startDate && startDate?.getMonth(), endDate && endDate?.getMonth() + 1)
-    }
-
-    return mouths
-}
