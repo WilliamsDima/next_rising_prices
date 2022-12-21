@@ -6,7 +6,7 @@ import { TransitionGroup } from 'react-transition-group'
 import ItemHelper from 'atoms/ItemHelper'
 import styles from './style.module.scss'
 import { IProduct } from 'src/stores/redusers/main/types'
-import { useActions } from 'hooks'
+import { useActions, useOutside } from 'hooks'
 import { clearDublicat } from 'helpers'
 
 type Helper = {
@@ -18,7 +18,6 @@ type Helper = {
 const SearchHelper: FC<Helper> = ({text, list, setText}) => {
 
   const {setSearchProduct} = useActions()
-  const [products, setProducts] = React.useState<IProduct[]>([])
   
   const searchData = text.trim().length && clearDublicat(list).filter((item) => {
     if (item.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())) {
@@ -26,16 +25,21 @@ const SearchHelper: FC<Helper> = ({text, list, setText}) => {
     }
   })
 
-  const handleToggle = (product: IProduct) => {
-
+  const clearHandler = () => {
     setText('')
+  }
+
+  const handleToggle = (product: IProduct) => {
+    clearHandler()
     setSearchProduct(product)
   }
 
-  
+
+  const {ref} = useOutside(clearHandler)
+
   
   return (
-    <div className={styles.container}>
+    <div ref={ref} className={styles.container}>
       <Box>
         <List>
           <TransitionGroup>

@@ -15,7 +15,7 @@ const Form: FC<Form> = memo(({}) => {
   const [text, setText] = useState('')
 
   return (
-    <div className={styles.form}>
+    <div className={styles.form} id="form">
         <InputSearch text={text} setText={setText} showClear={!!text}/>
 
         {!!products && <SearchHelper text={text} list={products} setText={setText}/>}

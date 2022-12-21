@@ -13,6 +13,7 @@ import {
 import { Line } from 'react-chartjs-2'
 import { useAppSelector } from '../../../hooks/hooks'
 import { getProductData, randomRgba } from 'helpers'
+import Empty from 'atoms/Empty'
 
 ChartJS.register(
   CategoryScale,
@@ -33,7 +34,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Рост цен',
+      text: 'Динамика цен',
     },
   },
 }
@@ -89,18 +90,13 @@ const DiagrammLine = () => {
   }
 
   useEffect(() => {
-    //console.log(labels);
-
-    //console.log(dataDiagramm);
-    
 
   }, [checks, selectProduct])
 
   return(
-    <>
-      {!!selectProduct && productsSearch?.length && <Line options={options} data={dataDiagramm} />}
-    </>
-    
+    <main className={styles.content}>
+      {!!selectProduct && productsSearch?.length ? <Line options={options} data={dataDiagramm} /> : <Empty />}
+    </main>
   )
 }
 

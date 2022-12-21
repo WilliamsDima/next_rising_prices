@@ -1,0 +1,17 @@
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    p {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #fff
+    }
+
+    img {
+        width: 50%;
+        height: auto;
+    }
+}
