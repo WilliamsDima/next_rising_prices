@@ -1,4 +1,4 @@
-import { IProduct } from "src/stores/redusers/main/types"
+import { IProduct } from '../stores/redusers/main/types'
 
 // создаю шаблон для чисел, разделяю запятой
 export const numberConverter = (num: number) => num && num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
