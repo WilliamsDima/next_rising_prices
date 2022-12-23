@@ -3,11 +3,11 @@ import Box from '@mui/material/Box'
 import Collapse from '@mui/material/Collapse'
 import List from '@mui/material/List'
 import { TransitionGroup } from 'react-transition-group'
-import ItemHelper from 'atoms/ItemHelper'
+import ItemHelper from '../../atoms/ItemHelper'
 import styles from './style.module.scss'
-import { IProduct } from 'src/stores/redusers/main/types'
-import { useActions, useOutside } from 'hooks'
-import { clearDublicat } from 'helpers'
+import { IProduct } from '../../../stores/redusers/main/types'
+import { useActions, useOutside } from '../../../hooks/hooks'
+import { clearDublicat } from '../../../hooks/helpers'
 
 type Helper = {
   text: string

@@ -1,5 +1,5 @@
 import { mainActions } from './../../actions/mainActions';
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IStore } from './types'
 
 const initialState: IStore = {
@@ -16,7 +16,7 @@ const mainSlice = createSlice({
     },
 })
 
-export const mainReducer = (state = initialState, action: any) => {
+export const mainReducer = (state = initialState, action: PayloadAction) => {
     return mainSlice.reducer(state, action);
 };
 

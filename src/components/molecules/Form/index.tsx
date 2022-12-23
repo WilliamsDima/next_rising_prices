@@ -1,6 +1,6 @@
-import InputSearch from "atoms/Input"
+import InputSearch from "../../atoms/Input"
 import { useAppSelector } from "../../../hooks/hooks"
-import SearchHelper from "molecules/SearchHelper"
+import SearchHelper from "../../molecules/SearchHelper"
 import React, { FC, useState, memo } from "react"
 import styles from './style.module.scss'
 

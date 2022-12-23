@@ -1,5 +1,4 @@
 import { initializeApp, FirebaseOptions, getApp, } from "firebase/app"
-import { getFirestore, doc, getDoc } from "firebase/firestore/lite"
 import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage"
 
 const firebaseConfig: FirebaseOptions = {
@@ -22,17 +21,8 @@ function createFirebaseApp(config: FirebaseOptions) {
 }
 
 const app = createFirebaseApp(firebaseConfig)
-const db = getFirestore(app)
 const storage = getStorage(app)
 
-// export const getData = async () => {
-
-//     const docRef = doc(db, "portfolio", 'data')
-//     const docSnap = await getDoc(docRef)
-//     const data = docSnap.data()
-
-//     return data
-// }
 
 export const getChecksUrl = async () => {
 
